@@ -8,13 +8,14 @@
       body {
         background-color: lightsteelblue;
         font-size: large;
-        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+          'Lucida Sans', Arial, sans-serif;
       }
-      .container{
+      .container {
         max-width: 800px;
         margin: auto;
       }
-      .tarjeta {
+      .card {
         background-color: aliceblue;
         color: royalblue;
         border-radius: 1rem;
@@ -23,7 +24,7 @@
         padding: 1rem;
         box-shadow: 0px 3px 10px rgba(128, 128, 128, 0.25);
       }
-      .titulo{
+      .title {
         color: mediumblue;
         text-align: center;
       }
@@ -36,37 +37,39 @@
     <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
 
-   
     <script type="text/babel">
       const rootElement = document.getElementById('root');
-      const contenidoDeclarativo = 'React te ayuda a crear interfaces de usuario interactivas de forma sencilla. Diseña vistas simples para cada estado en tu aplicación, y React se encargará de actualizar y renderizar de manera eficiente los componentes correctos cuando los datos cambien.'
-      const contenidoComponentes = 'Con React creas componentes encapsulados que manejan su propio estado, y los conviertes en interfaces de usuario complejas. Ya que la lógica de los componentes está escrita en JavaScript y no en plantillas, puedes pasar datos de forma sencilla a través de tu aplicación y mantener el estado fuera del DOM.'
-      const contenidoAprende = 'En React no dejamos fuera al resto de tus herramientas tecnológicas, así que podrás desarrollar nuevas características sin necesidad de volver a escribir el código existente.'
+      const contenidoDeclarativo =
+        'React te ayuda a crear interfaces de usuario interactivas de forma sencilla. Diseña vistas simples para cada estado en tu aplicación, y React se encargará de actualizar y renderizar de manera eficiente los componentes correctos cuando los datos cambien.';
+      const contenidoComponentes =
+        'Con React creas componentes encapsulados que manejan su propio estado, y los conviertes en interfaces de usuario complejas. Ya que la lógica de los componentes está escrita en JavaScript y no en plantillas, puedes pasar datos de forma sencilla a través de tu aplicación y mantener el estado fuera del DOM.';
+      const contenidoAprende =
+        'En React no dejamos fuera al resto de tus herramientas tecnológicas, así que podrás desarrollar nuevas características sin necesidad de volver a escribir el código existente.';
 
-      const Blog = (props)=> (<div className='container'>
-        <h1 className='titulo'>{props.titulo}</h1>
-        {props.children}</div>)
-      
-      const Articulo = (props) => (
-        <div className='tarjeta'>
-          <h1 className='container'>{props.children}</h1>
-          <p children={props.contenido} className='contenido' />
+      const Blog = (props) => (
+        <div className='container'>
+          <h1 className='title'>{props.title}</h1>
+          {props.children}
         </div>
       );
 
-      const elemento = (
-        <Blog titulo='CARACTERISTICAS DE REACT'>
-          <Articulo contenido={contenidoDeclarativo}>
-            Declarativo
-          </Articulo>
-          <Articulo contenido={contenidoComponentes}>
+      const Article = (props) => (
+        <div className='card'>
+          <h1 className='container'>{props.children}</h1>
+          <p children={props.content} className='content' />
+        </div>
+      );
+
+      const element = (
+        <Blog title='CARACTERISTICAS DE REACT'>
+          <Article content={contenidoDeclarativo}>Declarativo</Article>
+          <Article content={contenidoComponentes}>
             Basado en Componentes
-          </Articulo>
+          </Article>
         </Blog>
       );
 
-      ReactDOM.render(elemento, rootElement);
+      ReactDOM.render(element, rootElement);
     </script>
   </body>
 </html>
-
