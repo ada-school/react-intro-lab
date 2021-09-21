@@ -39,12 +39,10 @@
 
     <script type="text/babel">
       const rootElement = document.getElementById('root');
-      const contenidoDeclarativo =
+      const declarativeContent =
         'React te ayuda a crear interfaces de usuario interactivas de forma sencilla. Diseña vistas simples para cada estado en tu aplicación, y React se encargará de actualizar y renderizar de manera eficiente los componentes correctos cuando los datos cambien.';
-      const contenidoComponentes =
+      const componentsContent =
         'Con React creas componentes encapsulados que manejan su propio estado, y los conviertes en interfaces de usuario complejas. Ya que la lógica de los componentes está escrita en JavaScript y no en plantillas, puedes pasar datos de forma sencilla a través de tu aplicación y mantener el estado fuera del DOM.';
-      const contenidoAprende =
-        'En React no dejamos fuera al resto de tus herramientas tecnológicas, así que podrás desarrollar nuevas características sin necesidad de volver a escribir el código existente.';
 
       const Blog = (props) => (
         <div className='container'>
@@ -62,10 +60,8 @@
 
       const element = (
         <Blog title='CARACTERISTICAS DE REACT'>
-          <Article content={contenidoDeclarativo}>Declarativo</Article>
-          <Article content={contenidoComponentes}>
-            Basado en Componentes
-          </Article>
+          <Article content={declarativeContent}>Declarativo</Article>
+          <Article content={componentsContent}>Basado en Componentes</Article>
         </Blog>
       );
 
